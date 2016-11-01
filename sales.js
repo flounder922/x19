@@ -50,11 +50,9 @@ function getCookie(cname) {
 
 function calculateReceipt()
 {
-    var receiptSubtotal = getCookie("preTax");
-    receiptSubtotal = Number(receiptSubtotal);
+    var receiptSubtotal = Number(getCookie("preTax"));
     var receiptTax = receiptSubtotal * 0.075;
     var receiptTotal = receiptSubtotal + receiptTax;
-    console.log(receiptSubtotal);
     document.getElementById("sub").innerHTML = asCurrency(receiptSubtotal);
     document.getElementById("tax").innerHTML = asCurrency(receiptTax);
     document.getElementById("tot").innerHTML = asCurrency(receiptTotal);
